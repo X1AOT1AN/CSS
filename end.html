@@ -8,8 +8,13 @@
   <meta name="Description" content="">
   <title>Document</title>
   <style>
+	*{
+		margin:0;
+		padding:0;
+	}
 	body{
 		font:12px "微软雅黑","Arial";
+		margin-top:30px;
 	}
 	.mt{
 		width:900px;
@@ -45,11 +50,11 @@
 	}
 	.shai span{
 		padding-left:17px;
-		background:url(https://raw.githubusercontent.com/X1AOT1AN/CSS/master/image/tu.jpg) no-repeat -64px -133px;
+		background:url(tu.jpg) no-repeat -64px -133px;
 	}
 	.lun span{
 		padding-left:17px;
-		background:url(https://raw.githubusercontent.com/X1AOT1AN/CSS/master/image/tu.jpg) no-repeat -235px -133px;
+		background:url(tu.jpg) no-repeat -235px -133px;
 	}
 	.txt{
 		text-align:center;
@@ -60,11 +65,51 @@
 	table a:hover{
 		text-decoration:underline;
 	}
+	ul{
+		list-style:none;
+	}
+	.mt>ul>li{
+		float:left;
+		width:10%;
+		text-align:center;
+		line-height:30px;
+		color:#005aa0;
+		font-size:14px;
+	}
+	.mt>ul>li:hover{
+		color:#e4393c;
+		cursor:pointer;
+		height:34px;
+		line-height:34px;
+		background-color:white;
+		border-top:2px solid #e4393c;
+		border-left:1px solid #ccc;
+		border-right:1px solid #ccc;
+		margin-top:-6px;
+		border-bottom:none;
+	}
+	.extra{
+		overflow:hidden;
+	}
+	.zuofudong{
+		float:left;
+	}
+	.youfudong{
+		float:right;
+	}
   </style>
  </head>
  <body>
 	<div id="discuss">
-		<div class="mt"></div>
+		<div class="mt">
+			<ul>
+				<li>网友讨论圈</li>
+				<li class="shaidan">晒单贴</li>
+				<li>问答帖</li>
+				<li>圈子帖</li>
+				<li>讨论帖</li>
+			</ul>
+		</div>
 			<table>
 				<thead>
 					<tr>
@@ -90,6 +135,13 @@
 						<td class="txt">0/0</td>
 						<td class="txt"><a href="#">队VS内</a></td>
 						<td class="txt">2011.11.11</td>
+					</tr>
+					<tr class="extra">
+						<td colspan="4">
+							<span class="zuofudong">有问题要与其他用户讨论？<a href="#">发表帖子</a>
+							</span>
+							<span class="youfudong">共900个话题 <a href="#">&gt;&gt;浏览全部话题</a></span>
+						</td>
 					</tr>
 				</tbody>
 			</table>

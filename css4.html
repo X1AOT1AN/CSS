@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+   *{
+		margin:0;
+		padding:0;
+		font:16px "微软雅黑","Arial";
+		color:white;
+		list-style:none;
+		text-decoration:none;
+   }
+	#title{
+		width:800px;
+		height:40px;
+		background-color:#e4393c;
+		float:left;
+	}
+	#title>ul>li{
+		display:inline-block;
+		width:10%;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		font-weight:bold;
+	}
+	#title>ul>li:hover{
+		background-color:#bd2a2c;
+	}
+	#zuo{
+		width:300px;
+		height:40px;
+		background-color:#bd2a2c;
+		padding-left:20px;
+		float:left;
+	}
+	#zuo>.s1{
+		display:inline-block;
+		text-align:center;
+		line-height:40px;
+		float:left;
+		font-weight:bold;
+	}
+	#zuo>.s2{
+		display:inline-block;
+		width:20px;
+		height:20px;
+		background:url(tu.jpg) no-repeat -64px -123px;
+		margin-top:10px;
+		margin-right:10px;
+		float:right;
+	}
+	#zong{
+		width:auto;
+		height:auto;
+	}
+	#fenlei{
+		width:1000px;
+		height:400px;
+		overflow:hidden;
+	}
+	#fenlei>ul{
+		width:316px;
+		height:397px;
+		background-color:#ccc;
+		border:2px solid #e4393c;
+		border-top:none;
+		float:left;
+		position:relative;
+		
+	}
+	#fenlei>ul>li{
+		width:306px;
+		height:30px;
+		line-height:30px;
+		border-bottom:1px solid #fff;
+		padding-left:10px;
+	}
+	#fenlei>ul>li>a{
+		color:black;
+	}
+	#fenlei>ul>li:hover{
+		border:1px solid #ccc;
+		background-color:#fff;
+	}
+	.box{
+		width:500px;
+		height:382px;
+		border:1px solid #e4393c;
+		position:absolute;
+		left:300px;
+		top:3px;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="zong">
+		<div id="zuo">
+			<span class="s1">全部商品分类</span>
+			<span class="s2"></span>
+		</div>
+		<div id="title">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">食品</a></li>
+				<li><a href="#">服装城</a></li>
+				<li><a href="#">团购</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="fenlei">
+		<ul>
+			<li><a href="#">图书，音像，数字商品</a></li>
+			<li><a href="#">其他商品</a></li>
+			<div class="box"></div>
+		</ul>
+	</div>
+ </body>
+</html>
