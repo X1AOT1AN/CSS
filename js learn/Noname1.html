@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#banner {
+		position: relative;
+		width: 730px;
+		height: 454px;
+		margin: 10px auto;
+	}
+	#pic {
+		position: relative;
+		width: 730px;
+		height: 454px;
+	}
+	#pic img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+	}
+	#tab {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		width: 150px;
+		margin-left: -72px;
+	}
+	#tab ul li {
+		width: 18px;
+		height: 18px;
+		background-color: #999;
+		border-radius: 100%;
+		color: #fff;
+		font-family: "微软雅黑";
+		font-size: 12px;
+		line-height: 18px;
+		text-align: center;
+		float: left;
+		margin: 3px;
+		list-style: none;
+		cursor: pointer;
+	}
+	#tab ul li.on {
+		background-color: #f60;
+	}
+	#left,
+	#right {
+		width: 30px;
+		height: 40px;
+		background-color: #bbb;
+		color: #fff;
+		text-align: center;
+		line-height: 40px;
+		font-size:20px;
+		cursor: pointer;
+		font-weight: 400;
+		position: absolute;
+		top: 50%;
+		margin-top: -20px;
+	}
+	#left {
+		left: 0;
+	}
+	#right {
+		right: 0;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="banner">
+		<div id="pic">
+			<img src="img/1.jpg" />
+			<img src="img/2.jpg" />
+			<img src="img/3.jpg" />
+			<img src="img/4.jpg" />
+			<img src="img/5.jpg" />
+			<img src="img/6.jpg" />
+			<div id="tab">
+				<ul>
+					<li class="on">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+				</ul>
+			</div>
+			<div id="btn">
+				<div id="left"> < </div>
+				<div id="right"> > </div>
+			</div>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+		
+		var aImg = document.getElementById("pic").getElementsByTagName("img");
+		var aTab = document.getElementById("tab").getElementsByTagName("li");
+		var aLeft = document.getElementById("left");
+		var aRight = document.getElementById("right");
+		var aBanner = document.getElementById("banner");
+		var timer;
+
+		var page = 0;
+
+		aImg[0].style.display = "block";
+		aTab[0].className = "on";
+
+		for (var i=0;i<aTab.length;i++ )
+		{
+			//aTab[i].setAttribute("number",i);
+			aTab[i].index = i;
+			aTab[i].onclick = function(){
+				for (var j=0;j<aTab.length;j++ )
+				{
+					aTab[j].className = "";
+					aImg[j].style.display = "none";
+				}
+				this.className = "on";
+				aImg[this.index].style.display = "block";
+				page = this.index;
+			}
+		}
+
+		aRight.onclick = function(){
+			page++;
+			/*if ( page > 5 )
+			{
+				page =0;
+			}*/
+			page %= aTab.length;
+			for (var i=0;i<aTab.length;i++ )
+			{
+				aTab[i].className = "";
+				aImg[i].style.display = "none";
+			}
+			aTab[page].className = "on";
+			aImg[page].style.display = "block";
+		}
+
+		aLeft.onclick = function(){
+			page--;
+			if ( page < 0 )
+			{
+				page = aTab.length-1;
+			}
+			for (var i=0;i<aTab.length;i++ )
+			{
+				aTab[i].className = "";
+				aImg[i].style.display = "none";
+			}
+			aTab[page].className = "on";
+			aImg[page].style.display = "block";
+		}
+
+		aBanner.onmouseenter = function(){
+			clearInterval(timer);
+		}
+		aBanner.onmouseleave = function(){
+			timer = setInterval(function(){
+			page++;
+			/*if ( page > 5 )
+			{
+				page =0;
+			}*/
+			page %= aTab.length;
+			for (var i=0;i<aTab.length;i++ )
+			{
+				aTab[i].className = "";
+				aImg[i].style.display = "none";
+			}
+			aTab[page].className = "on";
+			aImg[page].style.display = "block";
+		} ,3000);
+		}
+
+		timer = setInterval(function(){
+			page++;
+			/*if ( page > 5 )
+			{
+				page =0;
+			}*/
+			page %= aTab.length;
+			for (var i=0;i<aTab.length;i++ )
+			{
+				aTab[i].className = "";
+				aImg[i].style.display = "none";
+			}
+			aTab[page].className = "on";
+			aImg[page].style.display = "block";
+		} ,3000);
+
+	</script>
+ </body>
+</html>
