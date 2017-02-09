@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		
+		var str = "俺哥哥是个色鬼俺哥哥是个色鬼俺哥哥是个色鬼俺哥哥是个色鬼俺哥哥是个色鬼俺哥哥是个色鬼";
+		
+		alert(str);
+		alert(fn( str , "个" , "及"));
+
+		function fn( str , a , b ){
+			var newstr = "";
+			for (var i=0;i<str.length ;i++ )
+			{
+				if (str.charAt(i)==a)
+				{
+					newstr += b;
+				}else
+				{
+					newstr += str.charAt(i);
+				}
+			}
+			return newstr;
+		}
+
+	</script> 
+ </body>
+</html>

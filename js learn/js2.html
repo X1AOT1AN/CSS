@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	#box {
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		background-color: red;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="box"></div>
+	<script>
+		
+		var oBox = document.getElementById("box");
+
+		move( oBox, "width", 400, 5);
+		move( oBox, "height", 400, 5);
+		//move( oBox, "margin", 400, 5);
+
+		function move( obj, attr, target, speed){
+			var startval = parseInt(getStyle( obj, attr));
+
+			var timer = setInterval(function(){
+				startval += speed;
+				if ( startval >= target )
+				{
+					clearInterval(timer);
+					startval = target;
+				}
+				oBox.style[attr] = startval + "px";
+			},30)
+
+			function getStyle( obj, attr){
+				return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+			}
+		}	
+			
+	</script>
+ </body>
+</html>

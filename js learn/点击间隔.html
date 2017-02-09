@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#box {
+		width: 200px;
+		height: 200px;
+		background-color: #000;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="box"></div>
+	<script>
+	
+		var oBox = document.getElementById("box");
+		var time = 0;
+
+		oBox.onclick = function(){
+			if ( new Date() - time > 1000 )
+			{
+				time = new Date();
+				var r = Math.floor(Math.random()*256);
+				var g = Math.floor(Math.random()*256);
+				var b = Math.floor(Math.random()*256);
+				oBox.style.background = "rgb("+r+","+g+","+b+")";
+			}
+		}
+		
+	</script>
+ </body>
+</html>

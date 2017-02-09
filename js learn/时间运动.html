@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#d1 {
+		width: 200px;
+		height: 200px;
+		background-color: #f00;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="d1"></div>
+	<script>
+	
+	var oBox = document.getElementById("d1");
+
+	goudan( oBox , "width" , 400 , 2000 , function(){
+		oBox.style.background = "blue";
+	});
+
+	function goudan( obj , attr , target , time , fn){
+
+	var startTime = new Date();
+	var startVal = parseInt(getStyle( obj, attr ));
+
+	var timer = setInterval(function(){
+
+		var nowTime = new Date();
+		var p = (nowTime-startTime)/time
+
+		if( p >= 1)
+		{
+			clearInterval(timer);
+			p = 1;
+			fn && fn();
+		} 
+
+		var nowVal = p*(target-startVal)+startVal;
+
+		obj.style[attr] = nowVal + "px";
+
+	},13);
+
+	function getStyle( obj , attr ){
+		return obj.currentStyle?obj.currentStyle:getComputedStyle(obj)[attr];
+	}
+	}
+	
+	</script>
+ </body>
+</html>
